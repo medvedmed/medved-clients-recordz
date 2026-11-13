@@ -225,7 +225,7 @@ export function createEnhancementComponents(React, jsxRuntime) {
   /**
    * 99% Photo Matcher Page Component
    */
-  function PhotoMatcherPage({ token, clients, onOpenAlbum, Ne, queryDrivePhotos }) {
+  function PhotoMatcherPage({ token, clients, onOpenAlbum, Ne, queryDrivePhotos, onConnectDrive }) {
     const [file, setFile] = useState(null);
     const [previewUrl, setPreviewUrl] = useState('');
     const [referenceFp, setReferenceFp] = useState(null);
@@ -526,13 +526,20 @@ export function createEnhancementComponents(React, jsxRuntime) {
                   ],
                 }),
 
-                jsx('button', {
-                  className: 'matcher-start-btn',
-                  type: 'button',
-                  disabled: !file || isScanning || !token,
-                  onClick: startScan,
-                  children: isScanning ? '🔍 Scanning Drive Photos…' : 'Start 99% Match Scan',
-                }),
+                !token
+                  ? jsx('button', {
+                      className: 'matcher-start-btn',
+                      type: 'button',
+                      onClick: onConnectDrive,
+                      children: '🔑 Connect Google Drive to Scan Photos',
+                    })
+                  : jsx('button', {
+                      className: 'matcher-start-btn',
+                      type: 'button',
+                      disabled: !file || isScanning,
+                      onClick: startScan,
+                      children: isScanning ? '🔍 Scanning Drive Photos…' : 'Start 99% Match Scan',
+                    }),
               ],
             }),
           ],

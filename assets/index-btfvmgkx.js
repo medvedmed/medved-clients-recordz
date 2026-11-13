@@ -15608,18 +15608,17 @@ function at() {
           }),
         ],
       }),
-      e &&
-        (0, N.jsx)(TabBar, {
-          activeTab: P ? `clients` : activeTab,
-          onSelectTab: (tab) => {
-            setActiveTab(tab);
-            setNavOrigin(null);
-            if (tab !== `clients` && P) {
-              Ze([]);
-            }
-          },
-          clientCount: r.length,
-        }),
+      (0, N.jsx)(TabBar, {
+        activeTab: P ? `clients` : activeTab,
+        onSelectTab: (tab) => {
+          setActiveTab(tab);
+          setNavOrigin(null);
+          if (tab !== `clients` && P) {
+            Ze([]);
+          }
+        },
+        clientCount: r.length,
+      }),
       (0, N.jsxs)(`main`, {
         children: [
           (!F.isOnline || F.jobs.length > 0 || F.saved > 0) &&
@@ -15730,6 +15729,7 @@ function at() {
                 clients: r,
                 Ne: Ne,
                 queryDrivePhotos: j,
+                onConnectDrive: Ye,
                 onOpenAlbum: (path) => {
                   setNavOrigin(`matcher`);
                   setActiveTab(`clients`);
