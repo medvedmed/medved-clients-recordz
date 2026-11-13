@@ -1,0 +1,27 @@
+functionsDirectory = "/Users/mohammedharaoui/Documents/ChatGPT/medpodo app/medpodo-photo-app/netlify/functions"
+functionsDirectoryOrigin = "default"
+plugins = []
+headers = []
+redirects = []
+
+[build]
+base = "/Users/mohammedharaoui/Documents/ChatGPT/medpodo app/medpodo-photo-app"
+functions = "/Users/mohammedharaoui/Documents/ChatGPT/medpodo app/medpodo-photo-app/netlify/functions"
+
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[functions]
+
+  [functions."*"]
